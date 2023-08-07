@@ -1,0 +1,14 @@
+name: Fresh, Clone repo, Lists
+on: 
+    push:
+      branches: [main]
+jobs:
+  JobClone:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning current repo
+        uses: actions/checkout@v3
+      - name: Confirmation
+        run: |
+          ls $pwd
+          ls ~
