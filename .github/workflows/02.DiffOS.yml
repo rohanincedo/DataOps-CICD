@@ -1,0 +1,15 @@
+name: Multiple OS test
+on: 
+    push:
+      branches: [main]
+    pull_request:
+      branches: [main]
+jobs:
+  Job1Ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "deleted event is ${{github.event_name}}"
+  Job2Windows:
+      runs-on: windows-latest
+      steps:
+        - run: echo "detected event is ${{github.event_name}}"
